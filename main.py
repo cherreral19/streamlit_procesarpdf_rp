@@ -7,10 +7,8 @@ st.set_page_config(page_title="Subir Documento", layout="wide")
 # --- Config rápida ---
 API_DEFAULT = st.secrets["ENDPOINT"]
 
-
 # --- UI en dos columnas ---
 col_left, col_right = st.columns([1, 4], gap="large")
-
 
 def _safe_json(resp: requests.Response):
     try:
@@ -19,7 +17,7 @@ def _safe_json(resp: requests.Response):
         return {"raw_text": resp.text}
 
 with col_left:
-    st.markdown("### 📄 Cargar PDF")
+    st.markdown("### 📄 Cargar PDF (máx. 45 MB)")
     pdf_file = st.file_uploader("Selecciona un archivo PDF", type=["pdf"])
     enviar = st.button("📤 Procesar documento", use_container_width=True)
 
