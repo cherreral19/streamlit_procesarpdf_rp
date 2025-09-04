@@ -17,7 +17,7 @@ def _safe_json(resp: requests.Response):
         return {"raw_text": resp.text}
 
 with col_left:
-    st.markdown("### 📄 Cargar PDF (máx. 45 MB)")
+    st.markdown("### 📄 Cargar PDF")
     pdf_file = st.file_uploader("Selecciona un archivo PDF", type=["pdf"])
     enviar = st.button("📤 Procesar documento", use_container_width=True)
 
